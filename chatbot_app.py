@@ -5,8 +5,8 @@ import random
 import ollama
 
 from agents.weather_agent import predict_weather
-from agents.crop_agent import predict_yield
-from agents.pest_agent import predict_pest_risk
+from agents.crop_agent import predict_yield, MODEL_AVAILABLE as CROP_MODEL_AVAILABLE
+from agents.pest_agent import predict_pest_risk, MODEL_AVAILABLE as PEST_MODEL_AVAILABLE
 from agents.llm_agent import ask_llm
 from utils.translator import thanglish_to_tamil, tamil_to_english
 
@@ -91,6 +91,10 @@ animation:sway 4s infinite ease-in-out;
 # ---------------- HEADER ----------------
 
 st.markdown('<div class="title">🌱 AI Farming Assistant</div>', unsafe_allow_html=True)
+
+# Show model status warning if using fallback
+if not CROP_MODEL_AVAILABLE or not PEST_MODEL_AVAILABLE:
+    st.warning("⚠️ Running in fallback mode: ML models not found. Using heuristic predictions. For better accuracy, train and include model files.", icon="⚠️")
 
 # ---------------- NAVIGATION ----------------
 

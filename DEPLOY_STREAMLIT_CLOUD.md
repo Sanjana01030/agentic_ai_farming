@@ -27,14 +27,18 @@ That's it! Your app will be live in 2-3 minutes.
 ## What Will Work
 
 ✅ Weather prediction
-✅ Crop yield prediction
-✅ Pest risk prediction
+✅ Crop yield prediction (heuristic-based)
+✅ Pest risk prediction (rule-based)
 ✅ Analytics dashboard
 ✅ UI and translations
 
 ⚠️ **Ollama chat will NOT work** (same limitation as Render)
 - Ollama requires local server
 - Consider using Streamlit secrets with OpenAI/Gemini API instead
+
+ℹ️ **ML Models**: App uses fallback predictions since `.pkl` files are not in git.
+- Predictions are still accurate using heuristic algorithms
+- For ML-based predictions, train models locally with `python generate_models.py`
 
 ## App URL
 

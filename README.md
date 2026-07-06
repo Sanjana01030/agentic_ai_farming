@@ -67,6 +67,11 @@ pip install -r requirements.txt
 streamlit run chatbot_app.py
 ```
 
+Note: The app will work with fallback predictions. For ML-based predictions, optionally generate models:
+```bash
+python generate_models.py
+```
+
 5. **Open your browser**
 ```
 http://localhost:8501
@@ -172,7 +177,7 @@ For support, email support@aifarming.ai or open an issue in the repository.
 ## ⚠️ Known Limitations
 
 - **Ollama**: The LLM chat feature requires Ollama server running locally. For cloud deployment, consider using OpenAI, Google Gemini, or similar APIs.
-- **Model Files**: Pre-trained models are not included in the repository due to size constraints. Run training scripts to generate them.
+- **ML Models**: The app uses fallback heuristic predictions when ML models are not available. Models are not included in the repository due to `.gitignore`. The app will work without them, but for better accuracy, run `python generate_models.py` locally to create them.
 
 ## 🔮 Future Enhancements
 
