@@ -13,5 +13,5 @@ venv/
 # VS Code
 .vscode/
 
-# Streamlit
-.streamlit/
+# Streamlit (allow config, ignore secrets)
+.streamlit/secrets.toml
